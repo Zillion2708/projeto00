@@ -9,6 +9,7 @@
 <body>
     
     <header id="inicio">
+        <button id="btn-carrinho">🛒 <span id="contador-carrinho">0</span></button>
         <h1>nome da lancheria</h1>
         <p>os melhores lanches da sua cidade sendo entregue em sua casa!</p>
         <nav>
@@ -35,6 +36,12 @@
             <p>R$ 65,00</p>
             <button class="btn-adicionar" data-nome="X-calota" data-preco="65">adicionar</button>
         </div>
+        <div class="lanche">
+            <h3>cachorro quente</h3>
+            <p>pao de 15cm, salsicha,salada,ervilha,tomate,queijo</p>
+            <p>R$ 20,00</p>
+            <button class="btn-adicionar" data-nome="cachorro quente" data-preco="20">adicionar</button>
+        </div>
     </section>
 
     <section id="contato">
@@ -42,6 +49,99 @@
        <p>numero (00) 0000000000</p>
        <p>localizacao: rua tal, numero tal, bairro tal</p>
     </section>
+
+    <aside id="janela-carrinho">
+        <h2>Carrinho</h2>
+        <ul id="lista-carrinho"></ul>
+        <p>Total: R$ <span id="total-carrinho">0,00</span></p>
+        <button id="btn-finalizar">finalizar pedido</button>
+        <button id="btn-fechar">fechar</button>
+    </aside>
+
+    <!-- Janelinha 1: escolher adicionais e observação -->
+    <div id="modal-pedido">
+        <div class="modal-conteudo">
+            <h2 id="modal-nome">lanche</h2>
+
+            <p>Adicionais:</p>
+            <div class="adicional-linha" data-nome="Bacon" data-preco="4">
+                <span>Bacon (+ R$ 4,00)</span>
+                <div class="controle">
+                    <button class="menos">-</button>
+                    <span class="qtd-adicional">0</span>
+                    <button class="mais">+</button>
+                </div>
+            </div>
+            <div class="adicional-linha" data-nome="Ovo extra" data-preco="2">
+                <span>Ovo extra (+ R$ 2,00)</span>
+                <div class="controle">
+                    <button class="menos">-</button>
+                    <span class="qtd-adicional">0</span>
+                    <button class="mais">+</button>
+                </div>
+            </div>
+            <div class="adicional-linha" data-nome="Queijo extra" data-preco="3">
+                <span>Queijo extra (+ R$ 3,00)</span>
+                <div class="controle">
+                    <button class="menos">-</button>
+                    <span class="qtd-adicional">0</span>
+                    <button class="mais">+</button>
+                </div>
+            </div>
+
+            <label for="observacao">Observação:</label>
+            <textarea id="observacao" placeholder="Ex: sem cebola"></textarea>
+
+            <p>Total deste lanche: R$ <span id="modal-total">0,00</span></p>
+
+            <button id="modal-confirmar">adicionar ao carrinho</button>
+            <button id="modal-cancelar">cancelar</button>
+        </div>
+    </div>
+
+    <!-- Janelinha 2: pergunta se quer finalizar -->
+    <div id="modal-finalizar">
+        <div class="modal-conteudo">
+            <h2>Finalizar pedido</h2>
+            <p>Deseja finalizar o pedido?</p>
+            <button id="btn-confirmar">sim</button>
+            <button id="btn-cancelar">não</button>
+        </div>
+    </div>
+
+    <!-- Janelinha 3: dados da entrega -->
+    <div id="modal-dados">
+        <div class="modal-conteudo">
+            <h2>Dados da entrega</h2>
+
+            <form id="form-entrega">
+                <div class="campo">
+                    <label for="nome-cliente">Nome:</label>
+                    <input type="text" id="nome-cliente" required>
+                </div>
+                <div class="campo">
+                    <label for="telefone-cliente">Telefone:</label>
+                    <input type="tel" id="telefone-cliente" required>
+                </div>
+                <div class="campo">
+                    <label for="rua-cliente">Rua:</label>
+                    <input type="text" id="rua-cliente" required>
+                </div>
+                <div class="campo">
+                    <label for="numero-cliente">Número:</label>
+                    <input type="text" id="numero-cliente" required>
+                </div>
+                <div class="campo">
+                    <label for="bairro-cliente">Bairro:</label>
+                    <input type="text" id="bairro-cliente" required>
+                </div>
+
+                <button type="submit">enviar pedido</button>
+                <button type="button" id="dados-voltar">voltar</button>
+            </form>
+        </div>
+    </div>
+
 <script src="site.js"></script>
 </body>
-</html> 
+</html>
