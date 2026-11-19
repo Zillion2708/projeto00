@@ -1,0 +1,41 @@
+body{
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f5f5f5;
+  margin: 0;
+}
+header {
+  background-color: #ff9d3c;
+  color: #3d2200;
+  text-align: center;
+  padding: 30px 20px;
+}
+
+nav a{
+  font-weight: bold;
+  text-decoration: none;
+  color: inherit;
+  margin: 0 10px;
+}
+
+button{
+  background-color: #3d2200;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 20px;
+}
+section{
+  padding: 20px;
+}
+.lanche{
+  background-color: white;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+}
+#contato{
+  background-color: rgb(189, 186, 186);
+}
